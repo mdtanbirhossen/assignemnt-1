@@ -1,4 +1,3 @@
-// Problem 1
 function formatValue(
   value: string | number | boolean
 ): string | number | boolean {
@@ -14,7 +13,7 @@ function formatValue(
   throw new Error("Input should be string, number or boolean");
 }
 
-// problem 2
+
 function getLength(value: string | any[]): number {
   if (typeof value === "string") {
     return value.length;
@@ -26,7 +25,7 @@ function getLength(value: string | any[]): number {
   throw new Error("Input should be string or a array");
 }
 
-// problem 3
+
 class Person {
   name: string;
   age: number;
@@ -41,7 +40,7 @@ class Person {
   }
 }
 
-// problem 4
+
 type item = { title: string; rating: number };
 function filterByRating(items: item[]): item[] {
   return items.filter((item) => {
@@ -53,7 +52,7 @@ function filterByRating(items: item[]): item[] {
   });
 }
 
-// problem 5
+
 type user = {
   id: number;
   name: string;
@@ -65,7 +64,7 @@ function filterActiveUsers(users: user[]): user[] {
   return users.filter((user) => user.isActive === true);
 }
 
-// problem 6
+
 interface Book {
   title: string;
   author: string;
@@ -81,7 +80,6 @@ function printBookDetails(book: Book): void {
   console.log(bookDetails);
 }
 
-// problem 7
 
 function getUniqueValues(
   array1: (number | string)[],
@@ -116,7 +114,7 @@ function getUniqueValues(
   return uniqueArray;
 }
 
-// problem 8
+
 type Product = {
   name: string;
   price: number;
