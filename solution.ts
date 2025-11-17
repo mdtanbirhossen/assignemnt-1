@@ -86,31 +86,24 @@ function getUniqueValues(
   array2: (number | string)[]
 ): (number | string)[] {
   const uniqueArray: (number | string)[] = [];
-  for (let item of array1) {
-    let isExist = false;
-    for (let newItem of uniqueArray) {
-      if (newItem === item) {
-        isExist = true;
+  let index = 0;
+  
+  function addUnique(item: number | string) {
+    let exists = false;
+    for (let i = 0; i < index; i++) {
+      if (uniqueArray[i] === item) {
+        exists = true;
         break;
       }
     }
-    if (!isExist) {
-      uniqueArray.push(item);
+    if (!exists) {
+      uniqueArray[index] = item; 
+      index++;
     }
   }
 
-  for (let item of array2) {
-    let isExist = false;
-    for (let newItem of uniqueArray) {
-      if (newItem === item) {
-        isExist = true;
-        break;
-      }
-    }
-    if (!isExist) {
-      uniqueArray.push(item);
-    }
-  }
+  for (let item of array1) addUnique(item);
+  for (let item of array2) addUnique(item);
   return uniqueArray;
 }
 
